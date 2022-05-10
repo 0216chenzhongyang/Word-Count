@@ -4,7 +4,7 @@ int *getCharNum(char *filename, int *totalNum);
 int main(){
 	char filename[30];
 	char state[10];
-	// totalNum[0]: 总字符数  totalNum[1]: 总单词数
+	// totalNum[0]: 总字符数  totalNum[1]: 总单词
 	int totalNum[2] = { 0, 0};
 
 	printf("Input file name: ");
