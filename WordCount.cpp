@@ -2,12 +2,11 @@
 #include <string.h>
 int *getCharNum(char *filename, int *totalNum);
 int main(){
-	char filename[30];
+	char filename[20];
 	char state[10];
-	// totalNum[0]: 总字符数  totalNum[1]: 总单词
 	int totalNum[2] = { 0, 0};
 
-	printf("Input file name: ");
+	printf("请输入需要测试的文本文件: ");
 	scanf("%s", state);
 	scanf("%s", filename);
 
@@ -19,16 +18,14 @@ int main(){
 			printf("单词数：%d\n",totalNum[1]);
 		}
 	}else{
-		printf("Error!\n");
+		printf("输入错误!\n");
 	}
 	return 0;
 }
 /**
  * 统计文件的字符数、单词数、行数
- *
  * @param  filename  文件名
  * @param  totalNum  文件统计数据
- *
  * @return  成功返回统计数据，否则返回NULL
  **/
 int *getCharNum(char *filename, int *totalNum){
@@ -53,12 +50,12 @@ int *getCharNum(char *filename, int *totalNum){
 		for(i=0; i<bufferLen; i++){
 			c = buffer[i];
 
-			if( c==' ' || c==','){  // 遇到空格或者逗号，那么单词数加1
+			if( c==' ' || c==','){  // 空格或者逗号，单词数加1
 				wordNum++;
 			}
 		}
-		totalNum[0] += charNum;  // 总字符数
-		totalNum[1] = wordNum;  // 总单词数
+		totalNum[0] += charNum;  // 字符总数
+		totalNum[1] = wordNum;  // 单词总数
 	}
 
 	return totalNum;
